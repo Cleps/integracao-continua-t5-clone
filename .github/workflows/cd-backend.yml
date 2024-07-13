@@ -24,7 +24,12 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             - name: Deploy
-              uses: johnbeynon/render-deploy-actions@0.0.8
+              uses: johnbeynon/render-deploy-action@0.0.8
               with:
                 service-id: ${{ secrets.RENDER_SERVICE_ID }}
                 api-key: ${{ secrets.RENDER_API_KEY }}
+
+
+
+
+                # rnd_oRA54TzbDR7BUrn1ndVJwbvk0gaU API KEY DO RENDER
