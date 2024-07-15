@@ -1,3 +1,3 @@
 export const environment = {
-    API_URL: 'http://localhost:9000'
+    API_URL: 'https://sgcmapi-t5-8d0w.onrender.com'
 };
