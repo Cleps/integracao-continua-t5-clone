@@ -10,14 +10,26 @@ jobs:
     uses: ./.github/workflows/ci-backend.yml
   
   deploy:
+<<<<<<< HEAD
+=======
+    needs: ci
+>>>>>>> cef18157abf6e0b8a4133011100d5d8a5eb81e70
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy
+<<<<<<< HEAD
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ secrets.RENDER_SERVICE_ID }}
           api-key: ${{ secrets.RENDER_API_KEY }}
 
                 # rnd_oRA54TzbDR7BUrn1ndVJwbvk0gaU API KEY DO RENDER
+=======
+        uses: johnbeynon/render-deploy-action@master
+        with:
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+          wait-for-success: true
+>>>>>>> cef18157abf6e0b8a4133011100d5d8a5eb81e70
