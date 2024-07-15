@@ -1,0 +1,29 @@
+name: CD Front-end
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  ci: # workflow de integração continua
+    name: CI Workflow Main
+    uses: ./.github/workflows/ci-frontend.yml
+  
+  testesE2E: # testes e2e
+    name: Exercutar testes E2E
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Set Up Node
+          uses: actions/setup-node@v4
+          with:
+            node-version: '20'
+        - name: Cliente Angular
+          run: npm install -g @angular/cli@13.3.8
+        - name: Instalação de dependências
+          working-directory: sgcmapp/
+          run: npm install
+
+        - name: execução do comando
+          run: ng run sgcmapp:cypress-run
